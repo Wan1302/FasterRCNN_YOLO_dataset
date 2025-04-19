@@ -67,7 +67,8 @@ class CustomDataset(Dataset):
         return image, target
     
 def get_preprocessed_data(data_path, sub_dir, args):
-    weights = FasterRCNN_ResNet50_FPN_Weights.DEFAULT
+    weights = models.detection.FasterRCNN_ResNet50_FPN_V2_Weights.DEFAULT
+    # weights = models.detection.FasterRCNN_MobileNet_V3_Large_FPN_Weights.DEFAULT
     normalize = weights.transforms()
     transform = None
     if bool(args.is_aug):

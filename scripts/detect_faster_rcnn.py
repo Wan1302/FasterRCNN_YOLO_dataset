@@ -30,7 +30,8 @@ def inference(
     model.model.to(device)
     model.eval()
 
-    weights = FasterRCNN_ResNet50_FPN_Weights.DEFAULT
+    weights = models.detection.FasterRCNN_ResNet50_FPN_V2_Weights.DEFAULT
+    # weights = models.detection.FasterRCNN_MobileNet_V3_Large_FPN_Weights.DEFAULT
     normalize = weights.transforms()
     transform = transforms.Compose([
         transforms.Resize((640, 640)),
